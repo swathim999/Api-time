@@ -16,7 +16,11 @@ function App() {
     };
 
     useEffect(() => {
-        getSigns().then(setSigns);
+        getSigns()
+          .then(setSigns)
+          .catch((error) => {
+            console.error('Error fetching signs:', error);
+        });
     }, []);
 
     return (
